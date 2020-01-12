@@ -15,9 +15,9 @@ H7PI_Arduino is a project for H7PI developers who use arduino for coding.
 * 8M QSPI Flash for app running.
 
 ### What Has Worked
-* digital
-* delay
-* 
+* digitalWrite,digitalRead
+* analogRead,analogReadVoltage
+* delay,delayMicroSenconds
 
 ### How to use
 1. Download [H7PI_MultiBootloader](https://github.com/PinoDM/H7PI_MultiBootloader) project, compile and burn into H7PI. 

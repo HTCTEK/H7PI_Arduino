@@ -55,28 +55,16 @@ static inline uint32_t millis(void) {
  * @see millis()
  */
 static inline uint32_t micros(void) {
-    uint32_t ms;
-    uint32_t cycle_cnt;
-    uint32_t res;
+	uint32_t ticks ;
+  uint32_t count ;
+ 
+	//SysTick->CTRL;
+	do {
+		 ticks = SysTick->VAL;
+		 count = uwTick;
+	} while (SysTick->CTRL & SysTick_CTRL_COUNTFLAG_Msk);
 
-    do {
-        ms = millis();
-        cycle_cnt = systick_get_count();
-        asm volatile("nop"); //allow interrupt to fire
-        asm volatile("nop");
-    } while (ms != millis());
-
-    if(systick_check_underflow()) {
-    	ms++;
-    	cycle_cnt = systick_get_count();
-    }
-
-    /* SYSTICK_RELOAD_VAL is 1 less than the number of cycles it
-       actually takes to complete a SysTick reload */
-    res = (ms * US_PER_MS) +
-        (SYSTICK_RELOAD_VAL + 1 - cycle_cnt) / CYCLES_PER_MICROSECOND;
-
-    return res;
+	return count * 1000 + (SysTick->LOAD + 1 - ticks) / (SystemCoreClock/1000000) ;
 }
 
 /**

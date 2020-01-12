@@ -27,14 +27,12 @@ uint32_t micros( void )
 	return count * 1000 + (SysTick->LOAD + 1 - ticks) / (SystemCoreClock/1000000) ;
 }
 
-void yield(void){ } //do nothing!
 
 void delay( uint32_t ms )
 {
 	#if (BOARD_OS==0)
     uint32_t end = uwTick + ms;
-    while (uwTick < end)
-    	yield();
+    while (uwTick < end){}
 	#else
 		osDelay(ms);
 	#endif

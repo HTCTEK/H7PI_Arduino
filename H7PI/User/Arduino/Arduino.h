@@ -8,9 +8,9 @@
 
 #include "binary.h"
 #include "wiring.h"
-#include "wiring_constants.h"
-#include "wiring_digital.h"
-#include "wiring_analog.h"
+#include "wirish_constants.h"
+#include "wirish_digital.h"
+#include "wirish_analog.h"
 
 #include "board.h"
 

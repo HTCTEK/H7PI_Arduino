@@ -1,8 +1,6 @@
-h7pi_samples/wirish_time.o: ../../wirish_time.cpp \
-  ../../../arduino/wirish_time.h ../../H7PI\board.h \
-  D:\Program\ Files\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\stdint.h \
-  D:\Program\ Files\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\__config \
+h7pi_samples/wiring.o: ../User/Arduino/wiring.c \
   D:\Program\ Files\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdint.h \
+  ../User/Arduino/board.h ../Core/Inc\stm32h7xx_it.h \
   ../Drivers/STM32H7xx_HAL_Driver/Inc\stm32h7xx_hal.h \
   ../Core/Inc\stm32h7xx_hal_conf.h \
   ../Drivers/STM32H7xx_HAL_Driver/Inc\stm32h7xx_hal_rcc.h \
@@ -18,15 +16,8 @@ h7pi_samples/wirish_time.o: ../../wirish_time.cpp \
   ../Drivers/CMSIS/Include/mpu_armv7.h \
   ../Drivers/CMSIS/Device/ST/STM32H7xx/Include/system_stm32h7xx.h \
   ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
-  D:\Program\ Files\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\stddef.h \
   D:\Program\ Files\Keil_v5\ARM\ARMCLANG\Bin\..\include\stddef.h \
-  D:\Program\ Files\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\__nullptr \
-  D:\Program\ Files\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\math.h \
   D:\Program\ Files\Keil_v5\ARM\ARMCLANG\Bin\..\include\math.h \
-  D:\Program\ Files\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\type_traits \
-  D:\Program\ Files\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\cstddef \
-  D:\Program\ Files\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\limits \
-  D:\Program\ Files\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\__undef_macros \
   ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc_ex.h \
   ../Drivers/STM32H7xx_HAL_Driver/Inc\stm32h7xx_hal_gpio.h \
   ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio_ex.h \
@@ -59,4 +50,5 @@ h7pi_samples/wirish_time.o: ../../wirish_time.cpp \
   ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h \
   ../Drivers/STM32H7xx_HAL_Driver/Inc\stm32h7xx_hal_pcd.h \
   ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_usb.h \
-  ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pcd_ex.h
+  ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pcd_ex.h \
+  ../User/Arduino/wiring.h

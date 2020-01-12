@@ -1,21 +1,7 @@
-h7pi_samples/main_1.o: ../../main.cpp ../../../arduino/Arduino.h \
-  D:\Program\ Files\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\stdint.h \
-  D:\Program\ Files\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\__config \
+h7pi_samples/wiring_digital.o: ../User/Arduino/wiring_digital.c \
+  ../User/Arduino/wiring_constants.h \
   D:\Program\ Files\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdint.h \
-  D:\Program\ Files\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\stdlib.h \
-  D:\Program\ Files\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdlib.h \
-  D:\Program\ Files\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\string.h \
-  D:\Program\ Files\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h \
-  D:\Program\ Files\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\math.h \
-  D:\Program\ Files\Keil_v5\ARM\ARMCLANG\Bin\..\include\math.h \
-  D:\Program\ Files\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\type_traits \
-  D:\Program\ Files\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\cstddef \
-  D:\Program\ Files\Keil_v5\ARM\ARMCLANG\Bin\..\include\stddef.h \
-  D:\Program\ Files\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\__nullptr \
-  D:\Program\ Files\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\limits \
-  D:\Program\ Files\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\__undef_macros \
-  ../../../arduino/binary.h ../../../arduino/wiring.h \
-  ../../../arduino/wiring_constants.h ../../H7PI\board.h \
+  ../User/Arduino/board.h ../Core/Inc\stm32h7xx_it.h \
   ../Drivers/STM32H7xx_HAL_Driver/Inc\stm32h7xx_hal.h \
   ../Core/Inc\stm32h7xx_hal_conf.h \
   ../Drivers/STM32H7xx_HAL_Driver/Inc\stm32h7xx_hal_rcc.h \
@@ -31,7 +17,8 @@ h7pi_samples/main_1.o: ../../main.cpp ../../../arduino/Arduino.h \
   ../Drivers/CMSIS/Include/mpu_armv7.h \
   ../Drivers/CMSIS/Device/ST/STM32H7xx/Include/system_stm32h7xx.h \
   ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
-  D:\Program\ Files\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\stddef.h \
+  D:\Program\ Files\Keil_v5\ARM\ARMCLANG\Bin\..\include\stddef.h \
+  D:\Program\ Files\Keil_v5\ARM\ARMCLANG\Bin\..\include\math.h \
   ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc_ex.h \
   ../Drivers/STM32H7xx_HAL_Driver/Inc\stm32h7xx_hal_gpio.h \
   ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio_ex.h \
@@ -40,8 +27,13 @@ h7pi_samples/main_1.o: ../../main.cpp ../../../arduino/Arduino.h \
   ../Drivers/STM32H7xx_HAL_Driver/Inc\stm32h7xx_hal_mdma.h \
   ../Drivers/STM32H7xx_HAL_Driver/Inc\stm32h7xx_hal_exti.h \
   ../Drivers/STM32H7xx_HAL_Driver/Inc\stm32h7xx_hal_cortex.h \
+  ../Drivers/STM32H7xx_HAL_Driver/Inc\stm32h7xx_hal_adc.h \
+  ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_adc.h \
+  ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_adc_ex.h \
   ../Drivers/STM32H7xx_HAL_Driver/Inc\stm32h7xx_hal_crc.h \
   ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_crc_ex.h \
+  ../Drivers/STM32H7xx_HAL_Driver/Inc\stm32h7xx_hal_dac.h \
+  ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dac_ex.h \
   ../Drivers/STM32H7xx_HAL_Driver/Inc\stm32h7xx_hal_flash.h \
   ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash_ex.h \
   ../Drivers/STM32H7xx_HAL_Driver/Inc\stm32h7xx_hal_hsem.h \
@@ -65,4 +57,4 @@ h7pi_samples/main_1.o: ../../main.cpp ../../../arduino/Arduino.h \
   ../Drivers/STM32H7xx_HAL_Driver/Inc\stm32h7xx_hal_pcd.h \
   ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_usb.h \
   ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pcd_ex.h \
-  ../../../arduino/wiring_digital.h ../../../arduino/wiring_analog.h
+  ../User/Arduino/wiring_digital.h

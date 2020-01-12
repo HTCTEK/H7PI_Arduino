@@ -29,22 +29,16 @@ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
- 
-#include "wirish_time.h"
+#include "wirish_analog.h"
 #include "board.h"
 
-void delay(unsigned long ms) {
-	#if (BOARD_OS==0)
-    uint32_t end = uwTick + ms;
-    while (uwTick < end){}
-	#else
-		osDelay(ms);
-	#endif
+
+
+uint32_t analogRead( uint32_t ulPin ) {
+		return board_AdcRead(ulPin);
 }
 
-
-
-void delayMicroseconds(uint32_t us) {
-    uint32_t end = micros() + us;
-    while (micros() < end){}
+float    analogReadVoltage(uint32_t ulPin ) {
+		return board_AdcReadVoltage(ulPin);
 }
+
