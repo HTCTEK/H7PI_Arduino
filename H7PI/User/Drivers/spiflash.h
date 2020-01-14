@@ -4,7 +4,11 @@
 /* 包含头文件 ----------------------------------------------------------------*/
 #include "stm32h7xx_hal.h"
 
-extern SPI_HandleTypeDef hspi2;
+#ifdef __cplusplus
+extern "C" {
+#endif
+	
+extern  SPI_HandleTypeDef hspi2;
 #define hspi hspi2
 
 /* USER CODE BEGIN Includes */
@@ -74,4 +78,8 @@ void W25Q64_SPI_PowerDown(void);
 void W25Q64_SPI_Wake_Up(void);
 
 	
+#ifdef __cplusplus
+}
+#endif
+
 #endif

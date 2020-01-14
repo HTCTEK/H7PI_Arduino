@@ -1,8 +1,8 @@
 /**
   ******************************************************************************
-  * File Name          : DAC.h
+  * File Name          : USB_OTG.h
   * Description        : This file provides code for the configuration
-  *                      of the DAC instances.
+  *                      of the USB_OTG instances.
   ******************************************************************************
   * @attention
   *
@@ -17,8 +17,8 @@
   ******************************************************************************
   */
 /* Define to prevent recursive inclusion -------------------------------------*/
-#ifndef __dac_H
-#define __dac_H
+#ifndef __usb_otg_H
+#define __usb_otg_H
 #ifdef __cplusplus
  extern "C" {
 #endif
@@ -30,13 +30,13 @@
 
 /* USER CODE END Includes */
 
-extern DAC_HandleTypeDef hdac1;
+extern PCD_HandleTypeDef hpcd_USB_OTG_FS;
 
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */
 
-void MX_DAC1_Init(void);
+void MX_USB_OTG_FS_PCD_Init(void);
 
 /* USER CODE BEGIN Prototypes */
 
@@ -45,7 +45,7 @@ void MX_DAC1_Init(void);
 #ifdef __cplusplus
 }
 #endif
-#endif /*__ dac_H */
+#endif /*__ usb_otg_H */
 
 /**
   * @}

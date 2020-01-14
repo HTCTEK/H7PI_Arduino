@@ -99,6 +99,7 @@ void W25Q64_SPI_Wake_Up(void)
 *********************************************************************/
 uint8_t W25Q64_SPI_Init(void)
 {
+	
 	W25Q64_SPI_Wake_Up();
 	if(W25Q64_SPI_ReadID() == SPI_FLASH_TYPE)
 	{

@@ -18,6 +18,8 @@ H7PI_Arduino is a project for H7PI developers who use arduino for coding.
 * digitalWrite,digitalRead
 * analogRead,analogReadVoltage
 * delay,delayMicroSenconds
+* USB MassStorage and USB CDC(virtual com)
+* SD Card and On Board flash filesystem
 
 ### How to use
 1. Download [H7PI_MultiBootloader](https://github.com/PinoDM/H7PI_MultiBootloader) project, compile and burn into H7PI. 
