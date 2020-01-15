@@ -32,11 +32,10 @@
 #ifndef __WIRISH_TIME_H_
 #define __WIRISH_TIME_H_
 
-#include "board.h"
-
 #ifdef __cplusplus
 extern "C"{
 #endif
+#include "Board.h"
 
 #define US_PER_MS               1000
 
@@ -92,7 +91,7 @@ void delay(unsigned long ms);
 void delayMicroseconds(uint32_t us);
 
 #ifdef __cplusplus
-}  extern "C"
+}
 #endif
 
 #endif

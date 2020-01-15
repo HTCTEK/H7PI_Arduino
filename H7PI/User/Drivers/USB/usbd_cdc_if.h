@@ -49,7 +49,8 @@
   * @{
   */
 /* USER CODE BEGIN EXPORTED_DEFINES */
-
+#define CDC_ECHO 0
+#define CDC_RX_BUFFER_SIZE 2048
 /* USER CODE END EXPORTED_DEFINES */
 
 /**
@@ -91,7 +92,6 @@
 extern USBD_CDC_ItfTypeDef USBD_Interface_fops_FS;
 
 /* USER CODE BEGIN EXPORTED_VARIABLES */
-
 /* USER CODE END EXPORTED_VARIABLES */
 
 /**
@@ -106,7 +106,11 @@ extern USBD_CDC_ItfTypeDef USBD_Interface_fops_FS;
 uint8_t CDC_Transmit_FS(uint8_t* Buf, uint16_t Len);
 
 /* USER CODE BEGIN EXPORTED_FUNCTIONS */
-
+void     CDC_ClearBuffer(void);
+void     CDC_ReadByte(uint8_t* des);
+void     CDC_ReadBytes(uint8_t* des, uint32_t length);
+uint8_t  CDC_WriteBytes(uint8_t* Buf, uint16_t Len);
+uint32_t CDC_GetDataLength(void);
 /* USER CODE END EXPORTED_FUNCTIONS */
 
 /**

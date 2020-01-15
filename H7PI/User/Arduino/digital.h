@@ -24,7 +24,7 @@
 #endif
 
 #include <stdint.h>
-#include "board.h"
+#include "Board.h"
 /**
  * \brief Configures the specified pin to behave either as an input or an output. See the description of digital pins for details.
  *

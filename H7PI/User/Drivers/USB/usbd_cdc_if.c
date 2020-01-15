@@ -32,7 +32,7 @@
 
 /* USER CODE BEGIN PV */
 /* Private variables ---------------------------------------------------------*/
-void cdc_receive(uint8_t* Buf, uint16_t Len);
+
 /* USER CODE END PV */
 
 /** @addtogroup STM32_USB_OTG_DEVICE_LIBRARY
@@ -99,7 +99,9 @@ uint8_t UserRxBufferFS[APP_RX_DATA_SIZE];
 uint8_t UserTxBufferFS[APP_TX_DATA_SIZE];
 
 /* USER CODE BEGIN PRIVATE_VARIABLES */
-
+uint32_t rxLength = 0;
+uint32_t rxRemindBufferSize = CDC_RX_BUFFER_SIZE;
+uint8_t  rxBuffer[CDC_RX_BUFFER_SIZE]={0};
 /* USER CODE END PRIVATE_VARIABLES */
 
 /**
@@ -114,7 +116,6 @@ uint8_t UserTxBufferFS[APP_TX_DATA_SIZE];
 extern USBD_HandleTypeDef hUsbDeviceFS;
 
 /* USER CODE BEGIN EXPORTED_VARIABLES */
-
 /* USER CODE END EXPORTED_VARIABLES */
 
 /**
@@ -132,7 +133,34 @@ static int8_t CDC_Control_FS(uint8_t cmd, uint8_t* pbuf, uint16_t length);
 static int8_t CDC_Receive_FS(uint8_t* pbuf, uint32_t *Len);
 
 /* USER CODE BEGIN PRIVATE_FUNCTIONS_DECLARATION */
+void CDC_ReadByte(uint8_t* des)
+{
+	uint8_t temp[CDC_RX_BUFFER_SIZE]={0};
+	
+	memcpy(des,rxBuffer,1);
+	memcpy(temp,rxBuffer+1,rxLength-1);
+	memset(rxBuffer,0,sizeof rxBuffer);
+	memcpy(rxBuffer,temp,sizeof rxBuffer);
+	rxLength--;
+}
 
+void CDC_ReadBytes(uint8_t* des, uint32_t length)
+{
+	uint8_t temp[CDC_RX_BUFFER_SIZE]={0};
+	memcpy(des,rxBuffer,length);
+	memcpy(temp,rxBuffer+length,rxLength-length);
+	
+	memset(rxBuffer,0,sizeof rxBuffer);
+	memcpy(rxBuffer,temp,sizeof rxBuffer);
+	rxLength-=length;
+}
+
+void CDC_ClearBuffer(void)
+{
+	rxLength = 0;
+	rxRemindBufferSize = CDC_RX_BUFFER_SIZE;
+	memset(rxBuffer,0,sizeof(rxBuffer));
+}
 /* USER CODE END PRIVATE_FUNCTIONS_DECLARATION */
 
 /**
@@ -263,7 +291,15 @@ static int8_t CDC_Control_FS(uint8_t cmd, uint8_t* pbuf, uint16_t length)
 static int8_t CDC_Receive_FS(uint8_t* Buf, uint32_t *Len)
 {
   /* USER CODE BEGIN 6 */
-	//cdc_receive(Buf,*Len);
+	if(rxRemindBufferSize >= *Len)
+	{
+		memcpy(&rxBuffer[rxLength],Buf,*Len);
+		#if CDC_ECHO==1
+		CDC_Transmit_FS(&Buf[0],*Len);
+		#endif
+		rxLength += *Len;
+		rxRemindBufferSize = CDC_RX_BUFFER_SIZE - rxLength;
+	}
   USBD_CDC_SetRxBuffer(&hUsbDeviceFS, &Buf[0]);
   USBD_CDC_ReceivePacket(&hUsbDeviceFS);
   return (USBD_OK);
@@ -296,7 +332,21 @@ uint8_t CDC_Transmit_FS(uint8_t* Buf, uint16_t Len)
 }
 
 /* USER CODE BEGIN PRIVATE_FUNCTIONS_IMPLEMENTATION */
+uint8_t CDC_WriteBytes(uint8_t* Buf, uint16_t Len)
+{
+	return CDC_Transmit_FS(Buf,Len);
+}
 
+
+uint32_t CDC_GetDataLength(void)
+{
+	return rxLength;
+}
+
+uint8_t* CDC_GetDataAddress(void)
+{
+	return rxBuffer;
+}
 /* USER CODE END PRIVATE_FUNCTIONS_IMPLEMENTATION */
 
 /**

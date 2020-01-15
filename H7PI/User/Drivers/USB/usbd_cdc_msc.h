@@ -3,8 +3,8 @@
 #define __USBD_COMPOSITE_H
 
 #include  "usbd_ioreq.h"
-#include "usbd_cdc.h"
-#include "usbd_msc.h"
+#include  "usbd_cdc.h"
+#include  "usbd_msc.h"
 
 #define MC_MAX_FS_PACKET            0x40
 

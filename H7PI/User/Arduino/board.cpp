@@ -30,7 +30,7 @@ OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-#include "board.h"
+#include "Board.h"
 /********************************************************************************
 * 
 *  pin map define 
@@ -598,6 +598,8 @@ void board_UsbInit(void)
 * board init
 *
 ********************************************************************************/
+USBSerial Serial;
+
 void board_Init(void)
 {
 	__enable_irq();

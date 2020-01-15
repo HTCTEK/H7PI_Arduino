@@ -25,6 +25,7 @@
 extern "C" {
 #endif
 
+#include "Board.h"
 
 /*
  * \brief Writes an analog value (PWM wave) to a pin.

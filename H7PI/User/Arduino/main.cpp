@@ -1,5 +1,10 @@
 #include "Arduino.h"
 
+
+
+
+
+
 void setup(void)
 {
 	pinMode(D26,OUTPUT);
@@ -9,6 +14,7 @@ void setup(void)
 
 void loop(void)
 {
+	uint8_t buffer[2048]={0};
 	float voltage = 0;
 	digitalWrite(D25,0);
 	digitalWrite(D26,1);
@@ -17,5 +23,17 @@ void loop(void)
 	digitalWrite(D26,0);
 	delay(100);
 	voltage = analogReadVoltage(A0);
+	if(Serial.available())
+	{
+		int i = Serial.available();
+		char tmp = 0;
+		for(;i > 0;i--)
+		{
+			//read data and write to USB CDC one by one 
+			Serial.read(&tmp,1);
+			Serial.write(&tmp,1);
+			delay(100);
+		}
+	}
 }
 

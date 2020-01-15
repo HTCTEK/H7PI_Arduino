@@ -33,9 +33,6 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #ifndef __BOARD_H__
 #define __BOARD_H__
 
-#ifdef __cplusplus
- extern "C" {
-#endif
 
 #include "stdint.h"
 #include "stm32h7xx_it.h"
@@ -49,7 +46,12 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include "fatfs.h"
 #include "spiflash.h"
 
-	
+
+#ifdef __cplusplus
+ extern "C" {
+#endif
+
+#include "USBSerial.h"
 /****************************************************************
  * 
  * board setting
@@ -191,11 +193,12 @@ extern char USERPath[4]; /* USER logical drive path */
 extern FATFS USERFatFS; /* File system object for USER logical drive */
 extern FIL USERFile; /* File object for USER */
 
-
 extern const uint32_t  board_PinMode[];
 extern const uint32_t  board_PinPull[];
 extern const PinInfo_t board_PinMap[];
 extern const uint32_t  board_AdcRank[];
+
+extern USBSerial Serial;
 //
 //
 void MX_USB_DEVICE_Init(void);

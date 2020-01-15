@@ -10,17 +10,16 @@ extern "C"{
 #include <string.h>
 #include <math.h>
 
-
-#include "analog.h"
-#include "digital.h"
-#include "time.h"
-
-#include "board.h"
-
-
-	void setup();
-	void loop();
+#include "Analog.h"
+#include "Digital.h"
+#include "Time.h"
+#include "USBSerial.h"
+#include "Print.h"
 	
+#include "Board.h"
+
+
+
 #ifdef __cplusplus
 }
 

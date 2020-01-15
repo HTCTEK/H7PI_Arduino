@@ -34,14 +34,14 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <string.h>
 #include <math.h>
 
-#include "print.h"
+#include "Print.h"
 
 
-size_t Print::write(const uint8_t *buffer, size_t size)
+size_t Print::write(const char* buf, size_t len)
 {
   size_t n = 0;
-  while (size--) {
-    n += write_ch(*buffer++);
+  while (len--) {
+    n += write_ch(*buf++);
   }
   return n;
 }

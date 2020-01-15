@@ -29,37 +29,73 @@ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
-#ifndef __WIRISH_SERIAL_H__
-#define __WIRISH_SERIAL_H__
 
-#include "stm32h7xx_hal.h"
-
-
-#ifdef __cplusplus
-extern "C" {
-#endif
-	
-#define SERIAL_BUFFER_SIZE 1024
-
-
-class Serial
+#include "USBSerial.h"
+USBSerial::USBSerial(void)
 {
-	public:
-		Serial(uint32_t tx, uint32_t rx, uint32_t baudrate);
-		~Serial(void);
 	
-	protected:
-		uint8_t tx_buffer[SERIAL_BUFFER_SIZE];
-	  uint8_t rx_buffer[SERIAL_BUFFER_SIZE];
-		
-};
-
-
-
-
-
-#ifdef __cplusplus
 }
-#endif
 
-#endif
+void USBSerial::begin(void)
+{
+	
+}
+
+void USBSerial::begin(uint32_t buadrate)
+{
+	
+}
+
+void USBSerial::begin(uint32_t buadrate, uint8_t config)
+{
+	return;
+}
+
+
+size_t USBSerial::write_ch(char ch)
+{
+    return this->write(&ch, 1);
+}
+
+size_t USBSerial::write(const char* str) 
+{
+		size_t len = strlen(str);
+    return this->write(str, len);
+}
+
+
+size_t USBSerial::write(const char* buf, uint32_t len)
+{
+	CDC_WriteBytes((uint8_t*)buf,len);
+  return len;
+}
+
+size_t USBSerial::read(char * buf,  uint32_t len)
+{
+	CDC_ReadBytes((uint8_t*)buf,len);
+	return 0;
+}
+
+
+uint32_t USBSerial::available()
+{
+	return CDC_GetDataLength();
+}
+
+uint32_t USBSerial::read()
+{
+	rx_length = CDC_GetDataLength();
+	this->read(rx_buffer,rx_length);
+	return rx_length;
+}
+
+uint32_t USBSerial::peek()
+{
+	return 0;
+}
+
+
+void USBSerial::flush()
+{
+	
+}
