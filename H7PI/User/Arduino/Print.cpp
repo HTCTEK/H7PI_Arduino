@@ -34,7 +34,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <string.h>
 #include <math.h>
 
-#include "Print.h"
+#include "print.h"
 
 
 size_t Print::write(const char* buf, size_t len)

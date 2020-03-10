@@ -135,7 +135,7 @@
         <SetRegEntry>
           <Number>0</Number>
           <Key>DLGUARM</Key>
-          <Name>d</Name>
+          <Name></Name>
         </SetRegEntry>
         <SetRegEntry>
           <Number>0</Number>
@@ -1298,7 +1298,7 @@
 
   <Group>
     <GroupName>/User/Arduino</GroupName>
-    <tvExp>0</tvExp>
+    <tvExp>1</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>
@@ -1309,8 +1309,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\User\Arduino\Main.cpp</PathWithFileName>
-      <FilenameWithoutPath>Main.cpp</FilenameWithoutPath>
+      <PathWithFileName>..\User\Arduino\analog.cpp</PathWithFileName>
+      <FilenameWithoutPath>analog.cpp</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -1321,8 +1321,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\User\Arduino\Board.cpp</PathWithFileName>
-      <FilenameWithoutPath>Board.cpp</FilenameWithoutPath>
+      <PathWithFileName>..\User\Arduino\board.cpp</PathWithFileName>
+      <FilenameWithoutPath>board.cpp</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -1333,8 +1333,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\User\Arduino\Analog.cpp</PathWithFileName>
-      <FilenameWithoutPath>Analog.cpp</FilenameWithoutPath>
+      <PathWithFileName>..\User\Arduino\dgital.cpp</PathWithFileName>
+      <FilenameWithoutPath>dgital.cpp</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -1345,8 +1345,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\User\Arduino\Dgital.cpp</PathWithFileName>
-      <FilenameWithoutPath>Dgital.cpp</FilenameWithoutPath>
+      <PathWithFileName>..\User\Arduino\main.cpp</PathWithFileName>
+      <FilenameWithoutPath>main.cpp</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -1357,8 +1357,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\User\Arduino\Time.cpp</PathWithFileName>
-      <FilenameWithoutPath>Time.cpp</FilenameWithoutPath>
+      <PathWithFileName>..\User\Arduino\print.cpp</PathWithFileName>
+      <FilenameWithoutPath>print.cpp</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -1369,8 +1369,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\User\Arduino\USBSerial.cpp</PathWithFileName>
-      <FilenameWithoutPath>USBSerial.cpp</FilenameWithoutPath>
+      <PathWithFileName>..\User\Arduino\stream.cpp</PathWithFileName>
+      <FilenameWithoutPath>stream.cpp</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -1381,8 +1381,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\User\Arduino\Stream.cpp</PathWithFileName>
-      <FilenameWithoutPath>Stream.cpp</FilenameWithoutPath>
+      <PathWithFileName>..\User\Arduino\time.cpp</PathWithFileName>
+      <FilenameWithoutPath>time.cpp</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -1393,8 +1393,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\User\Arduino\Print.cpp</PathWithFileName>
-      <FilenameWithoutPath>Print.cpp</FilenameWithoutPath>
+      <PathWithFileName>..\User\Arduino\USBSerial.cpp</PathWithFileName>
+      <FilenameWithoutPath>USBSerial.cpp</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>

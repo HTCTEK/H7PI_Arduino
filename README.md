@@ -1,10 +1,12 @@
 # H7PI_Arduino
 
 
+### Avaliable on Gitee and Github
+1. [H7PI_Arduino On Gitee](https://gitee.com/htctek/H7PI_Arduino)  
+2. [H7PI_Arduino On Github](https://github.com/htctek/H7PI_Arduino)
 
 ### What is H7PI_Arduino
 H7PI_Arduino is a project for H7PI developers who use arduino for coding.
-
 
 ### Feature
 * Based on STM32Cube HAL lib.
@@ -23,8 +25,8 @@ H7PI_Arduino is a project for H7PI developers who use arduino for coding.
 * USBSerial as default debug serialport
 
 ### How to use
-1. Download [H7PI_MultiBootloader](https://github.com/PinoDM/H7PI_MultiBootloader) project, compile and burn into H7PI. 
+1. Download [H7PI_MultiBootloader](https://github.com/htctek/H7PI_MultiBootloader) project, compile and burn into H7PI. 
 2. Download this project, edit your own app code, compile and burn into H7PI.
 
 ### Use Multiple Thread
-[H7PI_Samples](https://github.com/PinoDM/H7PI_Samples) support freeRTOS and now add an entry for arduino users, you can develop your app with multiple thread.
+[H7PI_Samples](https://github.com/htctek/H7PI_Samples) support freeRTOS and now add an entry for arduino users, you can develop your app with multiple thread.
