@@ -1,10 +1,5 @@
 #include "Arduino.h"
 
-
-
-
-
-
 void setup(void)
 {
 	pinMode(D26,OUTPUT);

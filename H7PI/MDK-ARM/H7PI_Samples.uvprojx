@@ -824,6 +824,11 @@
           <GroupName>/User/Arduino</GroupName>
           <Files>
             <File>
+              <FileName>arduino.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\User\Arduino\arduino.cpp</FilePath>
+            </File>
+            <File>
               <FileName>analog.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>..\User\Arduino\analog.cpp</FilePath>
@@ -837,11 +842,6 @@
               <FileName>dgital.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>..\User\Arduino\dgital.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>main.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>..\User\Arduino\main.cpp</FilePath>
             </File>
             <File>
               <FileName>print.cpp</FileName>
